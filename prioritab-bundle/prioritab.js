@@ -1,7 +1,7 @@
 // Other Prioritab scripts
 
 chrome.storage.sync.set({
-    'prioritab-value-test': 'blah'
+    'prioritab-value-test': 'blah2'
 }, function() {
     console.log('logged');
 });

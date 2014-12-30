@@ -1,8 +1,9 @@
 {
     "name": "Prioritab",
+    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsRnckw+S7BvZdffsH2oB4juSwlYBCmbZVYeK3u09ee+ilcWlpN7UNgSkSgwo06/od5IctGFpLHuFPmkHZyiZvriOLESr+HHs3yfmIJzMZgvh5Vtl8PI6MXrCfGHIP4VFzRK2mfBGRIRiwBRbpNLS4y39zt4oF95GhEHat4MTSRGSaPzUWBNYbTuApm4WF9tP2e23uxhZaJxXRFRMdbo6jXdHzS7h6vTt3rv9rhllWoS4I6/FAnR9JquMD6ciS7dRXeMlzFJvk0dd/7A3XLia6kvuAVwXUoqBxUY2i9IGNhMkb6EJcKWC/9WYuI5MYkA09qzWyjQr7EOqtrfhPIzjZwIDAQAB",
     "description": "A new tab page to remind you of your priorities",
     "version": "0.0.2",
-    "chrome_url_overrides" : {
+    "chrome_url_overrides": {
         "newtab": "prioritab.html"
     },
     "icons": {
