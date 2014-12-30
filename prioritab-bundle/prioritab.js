@@ -1,5 +1,33 @@
 // Other Prioritab scripts
 
+chrome.storage.sync.set({
+    'prioritab-value-test': 'blah'
+}, function() {
+    console.log('logged');
+});
+
+var test = "asdf";
+console.log(test)
+
+chrome.storage.sync.get('prioritab-value-test', function(result) {
+    console.log(result['prioritab-value-test']);
+    test = result['prioritab-value-test'];
+});
+
+console.log(test);
+
+chrome.storage.onChanged.addListener(function(changes, namespace) {
+    for (key in changes) {
+        var storageChange = changes[key];
+        console.log('Storage key "%s" in namespace "%s" changed. ' +
+            'Old value was "%s", new value is "%s".',
+            key,
+            namespace,
+            storageChange.oldValue,
+            storageChange.newValue);
+    }
+});
+
 function GetTime() {
     var prettyTime = moment().format("h:mm:ss A");
     document.getElementById('clockbox').innerHTML = prettyTime;
@@ -49,7 +77,7 @@ window.onload = function() {
     setInterval(GetTime, 1000);
     setInterval(CountdownDay, 900000);
 
-    $('.edit-priorities-link').click(function (e) {
+    $('.edit-priorities-link').click(function(e) {
         $('.edit-priorities').each(function(index) {
             $(this).hide();
             $(this).siblings('.edit-priorities-link').fadeIn();
@@ -60,7 +88,7 @@ window.onload = function() {
         $(prioritiesList).find('input.todo').focus();
     });
 
-    $('.hide-edit').click(function (e) {
+    $('.hide-edit').click(function(e) {
         $(this).parent().hide();
         $(this).parent().siblings('.edit-priorities-link').show();
     });
